@@ -11,9 +11,10 @@ namespace promise {
 namespace parent_ = this_;
 namespace this_ = parent_::promise;
 
-using DefaultValueType = parent_::future::DefaultValueType;
+template <class ... T> using Future = parent_::Future<T ...>;
+template <class ... T> using Value = typename parent_::future::Value<T ...>;
 
-template <class = DefaultValueType> struct Type;
+template <class = Value<>> struct Type;
 
 } // namespace promise
 
