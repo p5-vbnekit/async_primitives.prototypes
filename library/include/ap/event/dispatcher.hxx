@@ -10,7 +10,6 @@
 
 
 namespace ap::event::dispatcher {
-inline namespace this_ {
 
 using Subscription = parent_::Subscription;
 
@@ -42,7 +41,6 @@ private:
 // c++ template magic: inline implementation part
 
 namespace policy_ {
-inline namespace this_ {
 namespace base = parent_::parent_::source::policy;
 
 using Base = base::Type;
@@ -75,7 +73,6 @@ private:
 
 template <class, class ...> constexpr static bool pass_pointer_condition_() noexcept(true);
 
-} // inline namespace this_
 } // namespace policy_
 
 
@@ -109,5 +106,4 @@ template <class EventType> inline Type<EventType>::Type(
     ::std::decay_t<decltype(policy_)> *policy
 ) noexcept(false): Base{policy}, policy_{*policy} {}
 
-} // inline namespace this_
 } // namespace ap::event::dispatcher

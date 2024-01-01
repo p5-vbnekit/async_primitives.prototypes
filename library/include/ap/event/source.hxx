@@ -12,7 +12,6 @@
 
 
 namespace ap::event::source {
-inline namespace this_ {
 
 using Subscription = parent_::Subscription;
 
@@ -48,7 +47,6 @@ private:
 // c++ template magic: inline implementation part
 
 namespace policy {
-inline namespace this_ {
 
 using Event = void const *;
 using Handler = parent_::Handler<Event>;
@@ -63,7 +61,6 @@ struct Type {
     virtual ~Type();
 };
 
-} // inline namespace this_
 } // namespace policy
 
 using Policy = policy::Type;
@@ -87,5 +84,4 @@ inline auto Type<EventType>::subscribe(T &&handler) noexcept(false) {
     } catch (...) {}});
 }
 
-} // inline namespace this_
 } // namespace ap::event::source

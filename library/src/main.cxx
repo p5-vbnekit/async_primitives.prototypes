@@ -9,14 +9,11 @@
 
 namespace ap {
 namespace event::subscription {
-inline namespace this_ {
 namespace storage {
-inline namespace this_ {
 
 struct Type;
 
 namespace entry {
-inline namespace this_ {
 
 using Pointer = ::std::shared_ptr<Type>;
 using Storage = parent_::Type &;
@@ -35,17 +32,14 @@ struct Type final {
     static Pointer get(Adapter const &) noexcept(true);
 };
 
-} // inline namespace this_
 } // namespace entry
 
 struct Type final: ::std::list<entry::Pointer> {};
 
-} // inline namespace this_
 } // namespace storage
 
 using Storage = storage::Type;
 
-} // inline namespace this_
 } // namespace event::subscription
 
 struct event::Subscription::Private_ final {

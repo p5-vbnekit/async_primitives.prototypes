@@ -4,7 +4,6 @@
 
 
 namespace ap::event::source::base {
-inline namespace this_ {
 
 struct Type {
     virtual ~Type();
@@ -19,5 +18,4 @@ private:
     Type & operator = (Type const &) = delete;
 };
 
-} // inline namespace this_
 } // namespace ap::event::source::base

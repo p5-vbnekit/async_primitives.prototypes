@@ -4,18 +4,15 @@
 
 
 namespace ap::event::source {
-inline namespace this_ {
 namespace base {
+
 namespace parent_ = this_;
-inline namespace this_ {
-namespace parent_ = parent_;
+namespace this_ = parent_::base;
 
 struct Type;
 
-} // inline namespace this_
 } // namespace base
 
 using Base = base::Type;
 
-} // inline namespace this_
 } // namespace ap::event::source

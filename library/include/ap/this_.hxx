@@ -2,5 +2,7 @@
 
 
 namespace ap {
-inline namespace this_ {}
+
+namespace this_ = ap;
+
 } // namespace ap

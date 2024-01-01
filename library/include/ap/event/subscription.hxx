@@ -6,7 +6,6 @@
 
 
 namespace ap::event::subscription {
-inline namespace this_ {
 
 using Entry = this_::storage::Entry;
 using Pointer = ::std::weak_ptr<this_::storage::Entry>;
@@ -38,5 +37,4 @@ private:
     ::std::shared_ptr<Private_> private_ = {};
 };
 
-} // inline namespace this_
 } // namespace ap::event::subscription

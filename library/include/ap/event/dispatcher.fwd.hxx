@@ -4,30 +4,26 @@
 
 
 namespace ap::event {
-inline namespace this_ {
 namespace dispatcher {
+
 namespace parent_ = this_;
-inline namespace this_ {
-namespace parent_ = parent_;
+namespace this_ = parent_::dispatcher;
 
 template <class = void> struct Type;
 
 namespace policy_ {
+
 namespace parent_ = this_;
-inline namespace this_ {
-namespace parent_ = parent_;
+namespace this_ = parent_::policy_;
 
 struct Type;
 
-} // inline namespace this_
 } // namespace policy_
 
 using Policy_ = policy_::Type;
 
-} // inline namespace this_
 } // namespace dispatcher
 
 template <class ... T> using Dispatcher = dispatcher::Type<T ...>;
 
-} // inline namespace this_
 } // namespace ap::event

@@ -3,13 +3,9 @@
 #include "../this_.hxx"
 
 
-namespace ap {
-inline namespace this_ {
-namespace event {
+namespace ap::event {
+
 namespace parent_ = this_;
-inline namespace this_ {
-namespace parent_ = parent_;
-} // inline namespace this_
-} // namespace event
-} // inline namespace this_
-} // namespace ap
+namespace this_ = parent_::event;
+
+} // namespace ap::event

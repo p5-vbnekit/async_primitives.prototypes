@@ -9,11 +9,9 @@
 
 
 namespace ap::event::handler::traits {
-inline namespace this_ {
 
 template <class T> struct Wrapper {
     using Type = ::std::function<void(typename parent_::parent_::traits::Type<T> const &)>;
 };
 
-} // inline namespace this_
 } // namespace ap::event::handler::traits
